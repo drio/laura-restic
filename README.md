@@ -41,8 +41,8 @@ See the scripts for the retention policies.
 2. **Test backup workflow**:
    1. Update `config.txt` with your options.
    2. Run `init-repo.bat`  (only once, creates the restic repo)
-   - Run `backup.bat` (triggers a backup)
-   - Run Restic-Browser.exe to navigate the backup and restore files.
+   3. Run `backup.bat` (triggers a backup)
+   4. Run Restic-Browser.exe to navigate the backup and restore files.
       NOTE: you can save the profiles so you can load them automatically.
 
 Now, you can repeat using the bb-* scripts to work against backblaze.
