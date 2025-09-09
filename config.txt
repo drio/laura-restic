@@ -1,0 +1,4 @@
+BACKUP_PATH=C:\Users\YourUser\Documents
+B2_ACCOUNT_ID=your_account_id
+B2_APPLICATION_KEY=your_application_key
+BUCKET_NAME=your-bucket-name
