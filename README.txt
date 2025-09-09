@@ -1,26 +1,19 @@
 # Restic Backup System
 
-## Installation
+## Manual Downloads
 
-Run from Command Prompt:
-```
-powershell -ExecutionPolicy Bypass -File install.ps1
-```
+- **Restic**: https://github.com/restic/restic/releases/latest
+- **Restic Browser**: https://github.com/emuell/restic-browser/releases/latest
 
-## Testing
+## Usage
 
-1. **Deploy files to webserver**:
-   ```
-   make deploy
-   ```
-
-2. **Test PowerShell download** (from Windows):
+1. **Test PowerShell download** (from Windows):
    ```
    powershell -ExecutionPolicy Bypass -File install.ps1
    ```
 
-3. **Test backup workflow**:
-   - Run `init-repo.bat` 
-   - Create `backup-path.txt` with test directory
-   - Run `backup.bat`
-   - Run `browser.bat` to verify files
+2. **Test backup workflow**:
+   - Run `init-repo.bat`  (sets the restic repo)
+      - Create `backup-path.txt` with test directory (directory/folder to backup)
+   - Run `backup.bat` (runs a backup)
+   - Run Restic-Browser.exe to navigate the backup and restore files.
