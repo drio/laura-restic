@@ -4,7 +4,10 @@ $files = @(
     "restic.exe",
     "Restic-Browser.exe", 
     "init-repo.bat",
-    "backup.bat"
+    "backup.bat",
+    "bb-init-repo.bat",
+    "bb-backup.bat",
+    "config.txt"
 )
 
 Write-Host "Downloading Restic Backup System..."

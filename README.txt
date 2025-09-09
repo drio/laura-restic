@@ -14,6 +14,6 @@
 
 2. **Test backup workflow**:
    - Run `init-repo.bat`  (sets the restic repo)
-      - Create `backup-path.txt` with test directory (directory/folder to backup)
+      - Update `confit.txt` with your data.
    - Run `backup.bat` (runs a backup)
    - Run Restic-Browser.exe to navigate the backup and restore files.

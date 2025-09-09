@@ -7,7 +7,7 @@ if not exist config.txt (
     echo Format should be:
     echo BACKUP_PATH=C:\Users\YourUser\Documents
     echo B2_ACCOUNT_ID=your_account_id
-    echo B2_APPLICATION_KEY=your_application_key
+    echo B2_ACCOUNT_KEY=your_application_key
     echo BUCKET_NAME=your-bucket-name
     pause
     exit /b 1
@@ -17,7 +17,7 @@ REM Read configuration from file
 for /f "tokens=1,2 delims==" %%a in (config.txt) do (
     if "%%a"=="BACKUP_PATH" set BACKUP_PATH=%%b
     if "%%a"=="B2_ACCOUNT_ID" set B2_ACCOUNT_ID=%%b
-    if "%%a"=="B2_APPLICATION_KEY" set B2_APPLICATION_KEY=%%b
+    if "%%a"=="B2_ACCOUNT_KEY" set B2_ACCOUNT_KEY=%%b
     if "%%a"=="BUCKET_NAME" set BUCKET_NAME=%%b
 )
 
@@ -35,8 +35,8 @@ if "%B2_ACCOUNT_ID%"=="" (
     exit /b 1
 )
 
-if "%B2_APPLICATION_KEY%"=="" (
-    echo B2_APPLICATION_KEY not found in config.txt
+if "%B2_ACCOUNT_KEY%"=="" (
+    echo B2_ACCOUNT_KEY not found in config.txt
     pause
     exit /b 1
 )
@@ -48,7 +48,7 @@ if "%BUCKET_NAME%"=="" (
 )
 
 REM Prompt for repository password and run backup
-powershell -Command "$pw = Read-Host -AsSecureString 'Enter repository password'; $env:RESTIC_PASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($pw)); $env:B2_ACCOUNT_ID = '%B2_ACCOUNT_ID%'; $env:B2_APPLICATION_KEY = '%B2_APPLICATION_KEY%'; & '.\restic.exe' backup '%BACKUP_PATH%' --repo 'b2:%BUCKET_NAME%:/'"
+powershell -Command "$pw = Read-Host -AsSecureString 'Enter repository password'; $env:RESTIC_PASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR($pw)); $env:B2_ACCOUNT_ID = '%B2_ACCOUNT_ID%'; $env:B2_ACCOUNT_KEY = '%B2_ACCOUNT_KEY%'; & '.\restic.exe' backup '%BACKUP_PATH%' --repo 'b2:%BUCKET_NAME%:/'"
 
 if %errorlevel% equ 0 (
     echo.
