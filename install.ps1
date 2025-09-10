@@ -7,6 +7,8 @@ $files = @(
     "backup.bat",
     "bb-init-repo.bat",
     "bb-backup.bat",
+    "test-integrity.bat",
+    "bb-test-integrity.bat",
     "config.txt"
 )
 

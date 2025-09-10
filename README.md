@@ -46,3 +46,5 @@ See the scripts for the retention policies.
       NOTE: you can save the profiles so you can load them automatically.
 
 Now, you can repeat using the bb-* scripts to work against backblaze.
+
+You can use the *integrity* scripts to check the integrity of the restic repos, both for bb and local.
