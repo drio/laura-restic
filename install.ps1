@@ -15,6 +15,11 @@ $files = @(
 Write-Host "Downloading Restic Backup System..."
 
 foreach ($file in $files) {
+    if ($file -eq "config.txt" -and (Test-Path $file)) {
+        Write-Host "Skipping $file (already exists)" -ForegroundColor Yellow
+        continue
+    }
+
     Write-Host "Downloading $file..."
     try {
         Invoke-WebRequest -Uri "$baseUrl$file" -OutFile $file -ErrorAction Stop
