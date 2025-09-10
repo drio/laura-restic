@@ -3,11 +3,11 @@ $baseUrl = "https://data.drio.sh/restic/"
 $files = @(
     "restic.exe",
     "Restic-Browser.exe", 
-    "init-repo.bat",
-    "backup.bat",
+    "local-init-repo.bat",
+    "local-backup.bat",
     "bb-init-repo.bat",
     "bb-backup.bat",
-    "test-integrity.bat",
+    "local-test-integrity.bat",
     "bb-test-integrity.bat",
     "config.txt"
 )
