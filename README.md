@@ -3,12 +3,13 @@
 # Intro
 
 This is a project that provides a backup strategy for windows boxes. 
-The idea is that we want to backup a directory/folder. We will keep the data
+We want to backup a directory/folder. We will keep the data
 in 3 places. The local drive, secondary storage (USB drive) and a backblaze 
 bucket.
+
 The backups are done using restic. This gives us a couple of things:
 
-1. The backups are encrypted. Details:
+1. Confidenciality and Integrity:
 
 Restic uses AES-256 in Counter (CTR) mode with Poly1305-AES for authentication.
 
@@ -38,14 +39,13 @@ See the scripts for the retention policies.
    powershell -ExecutionPolicy Bypass -File install.ps1
    ```
 
-2. **Test backup workflow**:
-   1. Update `config.txt` with your options.
-   2. Run `init-repo.bat`  (only once, creates the restic repo)
-   3. Run `backup.bat` (triggers a backup)
-   4. Run Restic-Browser.exe to navigate the backup and restore files.
-      NOTE: you can save the profiles so you can load them automatically.
+2. Update `config.txt` with your options.
 
-Now, you can repeat using the bb-* scripts to work against backblaze.
+3. Run the necesssary scripts to perform different tasks:
+   - Run `init-repo.bat`  (only once, creates the restic repo)
+   - Run `local-backup.bat` (triggers a backup - use bb for a backblack backup)
+   - Run Restic-Browser.exe to navigate the backup and restore files.
+     NOTE: you can save the profiles so you can load them automatically.
 
 You can use the *integrity* scripts to check the integrity of the restic repos, both for bb and local.
 
