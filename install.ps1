@@ -1,3 +1,4 @@
+Set-Location $PSScriptRoot
 $ProgressPreference = 'SilentlyContinue'
 $baseUrl = "https://data.drio.sh/restic/"
 $files = @(
