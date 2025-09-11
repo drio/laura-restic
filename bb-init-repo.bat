@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 echo Initializing Backblaze B2 restic repository...
 echo.
 

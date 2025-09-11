@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 echo Running local backup integrity test...
 echo.
 

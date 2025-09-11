@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 echo Running Backblaze B2 backup...
 echo.
 
