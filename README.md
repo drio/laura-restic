@@ -48,3 +48,8 @@ See the scripts for the retention policies.
 Now, you can repeat using the bb-* scripts to work against backblaze.
 
 You can use the *integrity* scripts to check the integrity of the restic repos, both for bb and local.
+
+## TODO
+
+- [ ] Read password from local file
+- [ ] Schedule run backups
